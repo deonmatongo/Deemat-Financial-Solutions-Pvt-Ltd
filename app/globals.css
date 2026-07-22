@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-white text-onyx font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-burgundy ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  ::selection {
+    @apply bg-burgundy text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+  }
+
+  .section {
+    @apply py-20 md:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-burgundy;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-burgundy text-white shadow-cta hover:bg-burgundy-dark hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/25 bg-white/5 text-white hover:bg-white/10;
+  }
+
+  .btn-outline {
+    @apply btn border border-onyx/15 bg-white text-onyx hover:border-burgundy hover:text-burgundy;
+  }
+}
+
+/* Respect reduced-motion preference for all decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
