@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ShieldAlert, Factory, ArrowRight, Check } from "lucide-react";
 import { INDUSTRIES } from "@/lib/content";
 import Reveal from "./Reveal";
@@ -36,13 +33,7 @@ export default function IndustriesPreview() {
           {INDUSTRIES.map((industry, i) => {
             const Icon = ICONS[industry.id as keyof typeof ICONS];
             return (
-              <motion.div
-                key={industry.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
+              <Reveal key={industry.id} as="div" delay={i * 0.1}>
                 <Link
                   href="/industries"
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-8 transition-colors duration-300 hover:border-burgundy"
@@ -62,13 +53,16 @@ export default function IndustriesPreview() {
                         key={cap}
                         className="flex items-center gap-2 text-sm text-white/80"
                       >
-                        <Check className="h-4 w-4 shrink-0 text-burgundy-light" aria-hidden />
+                        <Check
+                          className="h-4 w-4 shrink-0 text-burgundy-light"
+                          aria-hidden
+                        />
                         {cap}
                       </li>
                     ))}
                   </ul>
                 </Link>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

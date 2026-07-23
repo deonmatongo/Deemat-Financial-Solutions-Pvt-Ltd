@@ -1,51 +1,89 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+
+type Tag = "div" | "section" | "li" | "article" | "span";
 
 type RevealProps = {
   children: ReactNode;
+  /** Delay in seconds before the transition begins. */
   delay?: number;
   className?: string;
-  as?: "div" | "section" | "li" | "article";
+  as?: Tag;
+  style?: React.CSSProperties;
+  onMouseEnter?: React.MouseEventHandler;
+  onMouseLeave?: React.MouseEventHandler;
 };
 
 /**
- * Scroll-triggered fade + rise. Fires once, respects prefers-reduced-motion
- * (falls back to a static, fully-visible element).
+ * Scroll-triggered fade + rise using a native IntersectionObserver + CSS
+ * (no animation library). Fires once, then disconnects. Respects
+ * prefers-reduced-motion via globals.css. If IO is unavailable, content is
+ * shown immediately.
  */
 export default function Reveal({
   children,
   delay = 0,
-  className,
+  className = "",
   as = "div",
+  style,
+  ...rest
 }: RevealProps) {
-  const reduce = useReducedMotion();
-  const MotionTag = motion[as];
+  const ref = useRef<HTMLElement | null>(null);
+  const [visible, setVisible] = useState(false);
 
-  const variants: Variants = {
-    hidden: { opacity: 0, y: reduce ? 0 : 24 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
-    },
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: "0px 0px -80px 0px", threshold: 0.05 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const Tag = as as "div";
+  const mergedStyle: React.CSSProperties = {
+    ...(delay ? ({ "--reveal-delay": `${delay}s` } as React.CSSProperties) : {}),
+    ...style,
   };
-
   return (
-    <MotionTag
-      className={className}
-      variants={variants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+    <Tag
+      ref={ref as React.Ref<HTMLDivElement>}
+      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      style={mergedStyle}
+      {...rest}
     >
       {children}
-    </MotionTag>
+    </Tag>
   );
 }
 
-/** Container that staggers direct Reveal/motion children. */
+/**
+ * Wraps children and staggers each direct child's reveal by `stagger` seconds.
+ * Children should be <Reveal> elements; their delay is offset by index.
+ */
 export function StaggerGroup({
   children,
   className,
@@ -56,17 +94,14 @@ export function StaggerGroup({
   stagger?: number;
 }) {
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: stagger } },
-      }}
-    >
-      {children}
-    </motion.div>
+    <div className={className}>
+      {Children.map(children, (child, i) => {
+        if (!isValidElement(child)) return child;
+        const childDelay = (child.props as { delay?: number }).delay ?? 0;
+        return cloneElement(child as React.ReactElement<{ delay?: number }>, {
+          delay: childDelay + i * stagger,
+        });
+      })}
+    </div>
   );
 }

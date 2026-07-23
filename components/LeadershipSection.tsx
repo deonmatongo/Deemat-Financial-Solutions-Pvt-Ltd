@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Award, Quote } from "lucide-react";
 import { LEADER } from "@/lib/content";
 import Reveal from "./Reveal";

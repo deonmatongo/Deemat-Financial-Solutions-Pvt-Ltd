@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ShieldAlert, Factory, Check } from "lucide-react";
 import { INDUSTRIES } from "@/lib/content";
 import Reveal from "./Reveal";
@@ -35,24 +34,26 @@ export default function IndustrySolutions({
         )}
 
         <div
-          className={`flex flex-col gap-4 lg:flex-row lg:h-[360px] ${
+          className={`flex flex-col gap-4 lg:h-[360px] lg:flex-row ${
             showHeading ? "mt-12" : ""
           }`}
         >
           {INDUSTRIES.map((industry, i) => {
             const Icon = ICONS[industry.id as keyof typeof ICONS];
-            const isActive = hovered === industry.id || hovered === null;
+            const dimmed = hovered !== null && hovered !== industry.id;
             return (
-              <motion.article
+              <Reveal
                 key={industry.id}
+                as="article"
+                delay={i * 0.1}
                 onMouseEnter={() => setHovered(industry.id)}
                 onMouseLeave={() => setHovered(null)}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                animate={{ flexGrow: hovered === industry.id ? 1.6 : 1 }}
-                className={`group relative flex-1 overflow-hidden rounded-2xl border p-8 transition-colors duration-300 ${
+                style={{
+                  flexGrow: hovered === industry.id ? 1.6 : 1,
+                  transition:
+                    "flex-grow .3s ease, background-color .3s, border-color .3s, opacity .6s, transform .6s",
+                }}
+                className={`group relative flex-1 overflow-hidden rounded-2xl border p-8 ${
                   hovered === industry.id
                     ? "border-burgundy bg-burgundy-gradient"
                     : "border-white/10 bg-white/[0.04]"
@@ -73,24 +74,26 @@ export default function IndustrySolutions({
                     {industry.blurb}
                   </p>
 
-                  <motion.ul
-                    animate={{
-                      opacity: isActive ? 1 : 0.45,
-                    }}
-                    className="mt-auto grid gap-2 pt-6 sm:grid-cols-2"
+                  <ul
+                    className={`mt-auto grid gap-2 pt-6 transition-opacity duration-300 sm:grid-cols-2 ${
+                      dimmed ? "opacity-45" : "opacity-100"
+                    }`}
                   >
                     {industry.capabilities.map((cap) => (
                       <li
                         key={cap}
                         className="flex items-center gap-2 text-sm text-white/85"
                       >
-                        <Check className="h-4 w-4 shrink-0 text-burgundy-light group-hover:text-white" aria-hidden />
+                        <Check
+                          className="h-4 w-4 shrink-0 text-burgundy-light group-hover:text-white"
+                          aria-hidden
+                        />
                         {cap}
                       </li>
                     ))}
-                  </motion.ul>
+                  </ul>
                 </div>
-              </motion.article>
+              </Reveal>
             );
           })}
         </div>

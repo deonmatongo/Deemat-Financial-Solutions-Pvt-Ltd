@@ -84,6 +84,45 @@
     transform-origin: bottom;
     animation: bar-grow 0.8s ease-out both;
   }
+
+  /* Scroll-reveal — driven by a tiny IntersectionObserver that toggles
+     .is-visible. Replaces Framer Motion's whileInView (no JS library). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Small keyed fade used for tab-panel / state-change crossfades. */
+  .anim-fade {
+    animation: fade-in 0.35s ease-out both;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Reduced-motion / no-JS safety: never leave reveal content hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Respect reduced-motion preference for all decorative animation */

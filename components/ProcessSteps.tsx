@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { PROCESS } from "@/lib/content";
 import Reveal from "./Reveal";
 
@@ -31,12 +28,10 @@ export default function ProcessSteps() {
 
           <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
             {PROCESS.map((step, i) => (
-              <motion.li
+              <Reveal
                 key={step.n}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
+                as="li"
+                delay={i * 0.12}
                 className="relative flex flex-col items-center text-center lg:items-start lg:text-left"
               >
                 <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-burgundy text-white shadow-cta ring-8 ring-mist">
@@ -51,7 +46,7 @@ export default function ProcessSteps() {
                 <p className="mt-2 text-sm leading-relaxed text-slate-brand/80">
                   {step.desc}
                 </p>
-              </motion.li>
+              </Reveal>
             ))}
           </ol>
         </div>

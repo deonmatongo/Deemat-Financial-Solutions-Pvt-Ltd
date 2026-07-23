@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -158,11 +157,7 @@ export default function ContactSection({
         <Reveal delay={0.1}>
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm md:p-8">
             {status === "success" ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-16 text-center"
-              >
+              <div className="anim-fade flex flex-col items-center justify-center py-16 text-center">
                 <CheckCircle2 className="h-14 w-14 text-emerald-400" aria-hidden />
                 <h3 className="mt-4 font-heading text-xl font-bold text-white">
                   Message received.
@@ -178,7 +173,7 @@ export default function ContactSection({
                 >
                   Send another message
                 </button>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={onSubmit} noValidate>
                 <div className="grid gap-5 sm:grid-cols-2">
