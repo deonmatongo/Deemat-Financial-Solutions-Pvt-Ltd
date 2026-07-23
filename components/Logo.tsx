@@ -26,28 +26,28 @@ export default function Logo({
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
       <span
-        className={`inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl ${
+        className={`inline-flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl ${
           onDark ? "bg-white shadow-sm ring-1 ring-white/10" : "bg-transparent"
         }`}
       >
         <Image
           src={mark}
           alt={`${COMPANY.name} logo`}
-          width={32}
-          height={30}
+          width={44}
+          height={42}
           priority
-          className="h-auto w-8 object-contain"
+          className="h-auto w-11 object-contain"
         />
       </span>
       {showText && (
         <span className="flex flex-col leading-none">
           <span
-            className={`font-heading text-lg font-extrabold tracking-tight ${primaryText}`}
+            className={`font-wordmark text-2xl font-semibold tracking-tight ${primaryText}`}
           >
             Deemat
           </span>
           <span
-            className={`mt-0.5 text-[9px] font-semibold uppercase tracking-[0.2em] ${subText}`}
+            className={`mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] ${subText}`}
           >
             Financial Solutions
           </span>

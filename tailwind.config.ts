@@ -32,6 +32,7 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-jakarta)", "system-ui", "sans-serif"],
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        wordmark: ["var(--font-wordmark)", "Georgia", "serif"],
       },
       boxShadow: {
         card: "0 2px 8px -2px rgba(26,26,26,0.08), 0 4px 20px -4px rgba(26,26,26,0.06)",
