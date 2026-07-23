@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ShieldCheck, TrendingUp, Landmark } from "lucide-react";
 import { COMPANY } from "@/lib/content";
 
@@ -21,10 +22,41 @@ export default function Hero() {
       id="hero"
       className="relative overflow-hidden bg-onyx-gradient pt-32 pb-24 md:pt-40 md:pb-32"
     >
-      {/* Decorative background grid + glow */}
+      {/* Hero photo — finance-district towers, infused into the onyx/burgundy
+          background. Priority-loaded since it's above the fold. */}
+      <Image
+        src="/hero-towers.jpg"
+        alt=""
+        aria-hidden
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none select-none object-cover object-top opacity-60"
+      />
+
+      {/* Brand-color wash over the photo: onyx from the left (keeps copy
+          readable) fading to a burgundy tint on the right. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(15,15,15,0.9) 0%, rgba(15,15,15,0.55) 45%, rgba(94,24,31,0.4) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(15,15,15,0.35) 0%, rgba(15,15,15,0) 30%, rgba(15,15,15,0.55) 100%)",
+        }}
+      />
+
+      {/* Decorative background grid + glow, layered on top of the photo */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage:
             "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
@@ -33,7 +65,7 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-10 h-[520px] w-[520px] rounded-full bg-burgundy/25 blur-[120px]"
+        className="pointer-events-none absolute -right-24 top-10 h-[520px] w-[520px] rounded-full bg-burgundy/30 blur-[120px]"
       />
 
       <div className="container-x relative grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
