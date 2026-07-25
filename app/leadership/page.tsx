@@ -5,8 +5,18 @@ import CTASection from "@/components/CTASection";
 import { LEADER } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Leadership",
-  description: `${LEADER.name} (${LEADER.postnominals}), ${LEADER.role} — 20+ years of executive finance leadership across listed companies, manufacturing and security services.`,
+  title: "Leadership | Naboth Matongo — Zimbabwe Finance Expert",
+  description: `${LEADER.name} (${LEADER.postnominals}), Managing Consultant at Deemat Financial Solutions — 20+ years of executive finance leadership in Zimbabwe. Leading provider of fractional CFO and financial assistance services in Harare.`,
+  alternates: { canonical: "https://www.deemat.co.zw/leadership" },
+  keywords: [
+    "Naboth Matongo Zimbabwe",
+    "ACMA CGMA Zimbabwe",
+    "finance expert Zimbabwe",
+    "CFO Zimbabwe",
+    "financial advisor Zimbabwe",
+    "chartered management accountant Zimbabwe",
+    "Harare finance consultant",
+  ],
 };
 
 export default function LeadershipPage() {

@@ -5,9 +5,20 @@ import ProcessSteps from "@/components/ProcessSteps";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Financial Advisory Services Zimbabwe | Fractional CFO Harare",
   description:
-    "Finance Leadership, Business Performance, Governance & Risk, and Finance Transformation — integrated fractional-CFO services for growing businesses.",
+    "Deemat Financial Solutions offers fractional CFO services, financial advisory, governance & compliance, and finance transformation for businesses in Zimbabwe. Expert financial assistance based in Harare.",
+  alternates: { canonical: "https://www.deemat.co.zw/services" },
+  keywords: [
+    "fractional CFO Zimbabwe",
+    "financial advisory services Zimbabwe",
+    "CFO services Harare",
+    "financial assistance Zimbabwe",
+    "finance transformation Zimbabwe",
+    "corporate governance Zimbabwe",
+    "IFRS reporting Zimbabwe",
+    "business financial consulting Harare",
+  ],
 };
 
 export default function ServicesPage() {

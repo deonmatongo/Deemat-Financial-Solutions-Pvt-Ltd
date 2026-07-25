@@ -6,9 +6,16 @@ import ProcessSteps from "@/components/ProcessSteps";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About | Financial Consulting Firm Zimbabwe",
   description:
-    "The Deemat difference: senior finance leadership sized to your business, plus our proven five-step engagement approach.",
+    "Deemat Financial Solutions is Zimbabwe's specialist financial advisory and fractional CFO firm. 20+ years of executive finance leadership across listed companies, manufacturing, and security services in Zimbabwe.",
+  alternates: { canonical: "https://www.deemat.co.zw/about" },
+  keywords: [
+    "financial consulting firm Zimbabwe",
+    "financial advisory firm Harare",
+    "Zimbabwe finance consultants",
+    "business financial assistance Zimbabwe",
+  ],
 };
 
 export default function AboutPage() {

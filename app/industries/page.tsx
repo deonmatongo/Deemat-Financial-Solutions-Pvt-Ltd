@@ -4,9 +4,18 @@ import IndustrySolutions from "@/components/IndustrySolutions";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Industries",
+  title: "Industries | Financial Advisory for Security & Manufacturing Zimbabwe",
   description:
-    "Deep financial expertise in Security Services (manned guarding, cash-in-transit, alarm systems) and Manufacturing (product costing, inventory management).",
+    "Specialist financial advisory for security services and manufacturing companies in Zimbabwe. Deemat Financial Solutions brings deep sector knowledge to financial assistance, cost control, and governance in Harare and beyond.",
+  alternates: { canonical: "https://www.deemat.co.zw/industries" },
+  keywords: [
+    "financial advisory security services Zimbabwe",
+    "manufacturing finance consulting Zimbabwe",
+    "security company CFO Zimbabwe",
+    "financial assistance manufacturing Zimbabwe",
+    "cash in transit finance Zimbabwe",
+    "finance consultant Harare industry",
+  ],
 };
 
 export default function IndustriesPage() {
