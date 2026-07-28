@@ -3,28 +3,21 @@ import { COMPANY } from "@/lib/content";
 import logoFull from "@/public/deemat-logo-full.png";
 
 type LogoProps = {
-  /** "light" for navy/dark backgrounds (logo seated in white pill), "dark" for light backgrounds. */
   variant?: "light" | "dark";
   className?: string;
 };
 
-export default function Logo({ variant = "dark", className = "" }: LogoProps) {
-  const onDark = variant === "light";
-
+export default function Logo({ className = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center ${className}`}>
-      <span
-        className={`inline-flex items-center justify-center overflow-hidden rounded-xl ${
-          onDark ? "bg-white px-3 py-1.5 shadow-sm ring-1 ring-white/10" : ""
-        }`}
-      >
+      <span className="overflow-hidden rounded-xl">
         <Image
           src={logoFull}
           alt={COMPANY.legalName}
-          width={148}
-          height={52}
+          width={192}
+          height={108}
           priority
-          className="h-auto w-[148px] object-contain"
+          className="h-16 w-auto object-contain"
         />
       </span>
     </span>
