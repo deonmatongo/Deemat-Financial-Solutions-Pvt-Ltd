@@ -64,7 +64,7 @@ function StatValue({ stat }: { stat: Stat }) {
 export default function StatsBar() {
   return (
     <section
-      className="relative z-10 -mt-px bg-burgundy-gradient"
+      className="relative z-10 -mt-px bg-gold-gradient"
       aria-label="Key metrics"
     >
       <div className="container-x grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4">

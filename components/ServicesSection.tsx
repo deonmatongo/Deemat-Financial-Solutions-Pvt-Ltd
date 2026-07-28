@@ -19,10 +19,10 @@ export default function ServicesSection({
         {showHeading ? (
           <Reveal className="max-w-2xl">
             <span className="eyebrow">
-              <span className="h-px w-6 bg-burgundy" />
+              <span className="h-px w-6 bg-gold" />
               What we do
             </span>
-            <h2 className="mt-5 text-3xl font-extrabold text-onyx sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-extrabold text-navy sm:text-4xl">
               Four disciplines, one integrated finance partner.
             </h2>
             <p className="mt-4 text-lg text-slate-brand">
@@ -49,27 +49,27 @@ export default function ServicesSection({
                   aria-pressed={isActive}
                   className={`group relative h-full w-full overflow-hidden rounded-2xl border p-6 text-left transition-all duration-300 hover:-translate-y-1.5 ${
                     isActive
-                      ? "border-burgundy bg-white shadow-card-hover"
-                      : "border-onyx/10 bg-white shadow-card hover:shadow-card-hover"
+                      ? "border-gold bg-white shadow-card-hover"
+                      : "border-navy/10 bg-white shadow-card hover:shadow-card-hover"
                   }`}
                 >
                   <span
-                    className={`absolute inset-x-0 top-0 h-1 origin-left bg-burgundy transition-transform duration-300 ${
+                    className={`absolute inset-x-0 top-0 h-1 origin-left bg-gold transition-transform duration-300 ${
                       isActive
                         ? "scale-x-100"
                         : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-burgundy/10 text-burgundy transition-colors group-hover:bg-burgundy group-hover:text-white">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-white">
                     <service.icon className="h-6 w-6" aria-hidden />
                   </span>
-                  <h3 className="mt-5 font-heading text-lg font-bold text-onyx">
+                  <h3 className="mt-5 font-heading text-lg font-bold text-navy">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-brand/80">
                     {service.summary}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-burgundy opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-gold opacity-0 transition-opacity group-hover:opacity-100">
                     View capabilities
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                   </span>
@@ -80,13 +80,13 @@ export default function ServicesSection({
         </div>
 
         {/* Tabbed detail panel */}
-        <div className="mt-8 overflow-hidden rounded-2xl bg-onyx-gradient p-8 md:p-10">
+        <div className="mt-8 overflow-hidden rounded-2xl bg-navy-gradient p-8 md:p-10">
           <div
             key={activeService.id}
             className="anim-fade grid gap-8 md:grid-cols-[auto_1fr] md:items-center"
           >
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-burgundy text-white">
+              <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-white">
                 <activeService.icon className="h-8 w-8" aria-hidden />
               </span>
               <div className="md:max-w-[14rem]">
@@ -106,7 +106,7 @@ export default function ServicesSection({
                   className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/90"
                 >
                   <Check
-                    className="h-4 w-4 shrink-0 text-burgundy-light"
+                    className="h-4 w-4 shrink-0 text-gold-light"
                     aria-hidden
                   />
                   {item}

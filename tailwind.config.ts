@@ -9,25 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Deemat brand palette (extracted from logo)
-        onyx: {
-          DEFAULT: "#1A1A1A",
-          50: "#f5f5f5",
-          800: "#242424",
-          900: "#1A1A1A",
-          950: "#0f0f0f",
+        // Deemat brand palette — Navy & Gold
+        navy: {
+          DEFAULT: "#1B2D5D",
+          light: "#2A4080",
+          dark: "#14224A",
+          50: "#EEF1F8",
+          800: "#2A4080",
+          900: "#1B2D5D",
+          950: "#0D1730",
         },
-        burgundy: {
-          DEFAULT: "#8B2635",
-          light: "#A8394A",
-          dark: "#7A2021",
-          deeper: "#5E181F",
+        gold: {
+          DEFAULT: "#C59A38",
+          light: "#E6C96A",
+          dark: "#A57A22",
+          deeper: "#8A6018",
+          highlight: "#F3DE8B",
         },
         slate: {
-          brand: "#2B303A",
-          soft: "#3A4150",
+          brand: "#8A93A5",
+          soft: "#E7EAF0",
         },
-        mist: "#F8F9FA",
+        mist: "#F8F9FB",
       },
       fontFamily: {
         heading: ["var(--font-jakarta)", "system-ui", "sans-serif"],
@@ -35,16 +38,16 @@ const config: Config = {
         wordmark: ["var(--font-wordmark)", "Georgia", "serif"],
       },
       boxShadow: {
-        card: "0 2px 8px -2px rgba(26,26,26,0.08), 0 4px 20px -4px rgba(26,26,26,0.06)",
+        card: "0 2px 8px -2px rgba(27,45,93,0.08), 0 4px 20px -4px rgba(27,45,93,0.06)",
         "card-hover":
-          "0 8px 24px -6px rgba(139,38,53,0.18), 0 12px 40px -8px rgba(26,26,26,0.14)",
-        cta: "0 8px 24px -8px rgba(139,38,53,0.45)",
+          "0 8px 24px -6px rgba(197,154,56,0.18), 0 12px 40px -8px rgba(27,45,93,0.14)",
+        cta: "0 8px 24px -8px rgba(197,154,56,0.45)",
       },
       backgroundImage: {
-        "burgundy-gradient":
-          "linear-gradient(135deg, #8B2635 0%, #7A2021 55%, #5E181F 100%)",
-        "onyx-gradient":
-          "linear-gradient(160deg, #242424 0%, #1A1A1A 60%, #0f0f0f 100%)",
+        "gold-gradient":
+          "linear-gradient(135deg, #C59A38 0%, #A57A22 55%, #8A6018 100%)",
+        "navy-gradient":
+          "linear-gradient(160deg, #2A4080 0%, #1B2D5D 60%, #14224A 100%)",
       },
       keyframes: {
         "fade-up": {

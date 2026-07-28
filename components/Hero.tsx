@@ -20,9 +20,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-onyx-gradient pt-32 pb-24 md:pt-40 md:pb-32"
+      className="relative overflow-hidden bg-navy-gradient pt-32 pb-24 md:pt-40 md:pb-32"
     >
-      {/* Hero photo — finance-district towers, infused into the onyx/burgundy
+      {/* Hero photo — finance-district towers, infused into the navy/gold
           background. Priority-loaded since it's above the fold. */}
       <Image
         src="/hero-towers.jpg"
@@ -34,14 +34,14 @@ export default function Hero() {
         className="pointer-events-none select-none object-cover object-top opacity-60"
       />
 
-      {/* Brand-color wash over the photo: onyx from the left (keeps copy
-          readable) fading to a burgundy tint on the right. */}
+      {/* Brand-color wash over the photo: navy from the left (keeps copy
+          readable) fading to a gold tint on the right. */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(15,15,15,0.9) 0%, rgba(15,15,15,0.55) 45%, rgba(94,24,31,0.4) 100%)",
+            "linear-gradient(90deg, rgba(13,23,48,0.92) 0%, rgba(27,45,93,0.60) 45%, rgba(197,154,56,0.25) 100%)",
         }}
       />
       <div
@@ -49,7 +49,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(15,15,15,0.35) 0%, rgba(15,15,15,0) 30%, rgba(15,15,15,0.55) 100%)",
+            "linear-gradient(180deg, rgba(13,23,48,0.35) 0%, rgba(13,23,48,0) 30%, rgba(13,23,48,0.55) 100%)",
         }}
       />
 
@@ -65,14 +65,14 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-10 h-[520px] w-[520px] rounded-full bg-burgundy/30 blur-[120px]"
+        className="pointer-events-none absolute -right-24 top-10 h-[520px] w-[520px] rounded-full bg-gold/30 blur-[120px]"
       />
 
       <div className="container-x relative grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy */}
         <div>
-          <span className="eyebrow anim-fade-up text-burgundy-light">
-            <span className="h-px w-6 bg-burgundy-light" />
+          <span className="eyebrow anim-fade-up text-gold-light">
+            <span className="h-px w-6 bg-gold-light" />
             {COMPANY.tagline}
           </span>
 
@@ -81,7 +81,7 @@ export default function Hero() {
             style={{ animationDelay: "0.05s" }}
           >
             Executive finance leadership,{" "}
-            <span className="text-burgundy-light">without the full-time cost.</span>
+            <span className="text-gold-light">without the full-time cost.</span>
           </h1>
 
           <p
@@ -113,7 +113,7 @@ export default function Hero() {
                 key={b.label}
                 className="flex items-center gap-2 text-sm text-white/60"
               >
-                <b.icon className="h-4 w-4 text-burgundy-light" aria-hidden />
+                <b.icon className="h-4 w-4 text-gold-light" aria-hidden />
                 {b.label}
               </li>
             ))}
@@ -126,7 +126,7 @@ export default function Hero() {
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                className="absolute inset-0 animate-pulse-ring rounded-full border border-burgundy/30"
+                className="absolute inset-0 animate-pulse-ring rounded-full border border-gold/30"
                 style={{ margin: `${i * 46}px`, animationDelay: `${i * 0.5}s` }}
               />
             ))}
@@ -145,7 +145,7 @@ export default function Hero() {
                 {bars.map((h, idx) => (
                   <span
                     key={idx}
-                    className="hero-bar flex-1 rounded-t bg-gradient-to-t from-burgundy to-burgundy-light"
+                    className="hero-bar flex-1 rounded-t bg-gradient-to-t from-gold to-gold-light"
                     style={{
                       height: `${h}%`,
                       animationDelay: `${0.4 + idx * 0.08}s`,

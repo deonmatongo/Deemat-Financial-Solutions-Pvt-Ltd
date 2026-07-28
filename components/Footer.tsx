@@ -5,7 +5,7 @@ import { COMPANY, NAV_LINKS, SERVICES, YEAR } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="bg-onyx-950 text-white">
+    <footer className="bg-navy-950 text-white">
       <div className="container-x grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8">
         {/* Brand + blurb */}
         <div>
@@ -16,19 +16,19 @@ export default function Footer() {
           </p>
           <ul className="mt-6 space-y-2.5 text-sm text-white/70">
             <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <Mail className="h-4 w-4 text-gold-light" aria-hidden />
               <a href={`mailto:${COMPANY.email}`} className="hover:text-white">
                 {COMPANY.email}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <Phone className="h-4 w-4 text-gold-light" aria-hidden />
               <a href={`tel:${COMPANY.phoneHref}`} className="hover:text-white">
                 {COMPANY.phone}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <MapPin className="h-4 w-4 text-gold-light" aria-hidden />
               {COMPANY.location}
             </li>
           </ul>

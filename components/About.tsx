@@ -21,10 +21,10 @@ export default function About() {
       <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">
         <Reveal>
           <span className="eyebrow">
-            <span className="h-px w-6 bg-burgundy" />
+            <span className="h-px w-6 bg-gold" />
             The Deemat difference
           </span>
-          <h2 className="mt-5 text-3xl font-extrabold text-onyx sm:text-4xl">
+          <h2 className="mt-5 text-3xl font-extrabold text-navy sm:text-4xl">
             The strategic value of a CFO — sized to your business.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-brand">
@@ -41,7 +41,7 @@ export default function About() {
         </Reveal>
 
         <StaggerGroup className="grid gap-5 sm:grid-cols-2">
-          <Reveal className="rounded-2xl border border-onyx/10 bg-mist p-6">
+          <Reveal className="rounded-2xl border border-navy/10 bg-mist p-6">
             <h3 className="text-sm font-bold uppercase tracking-wide text-slate-brand">
               Full-time CFO
             </h3>
@@ -57,18 +57,18 @@ export default function About() {
 
           <Reveal
             delay={0.08}
-            className="relative rounded-2xl border border-burgundy/30 bg-white p-6 shadow-card"
+            className="relative rounded-2xl border border-gold/30 bg-white p-6 shadow-card"
           >
-            <span className="absolute -top-3 left-6 rounded-full bg-burgundy px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
+            <span className="absolute -top-3 left-6 rounded-full bg-gold px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
               Deemat model
             </span>
-            <h3 className="text-sm font-bold uppercase tracking-wide text-burgundy">
+            <h3 className="text-sm font-bold uppercase tracking-wide text-gold">
               Fractional CFO
             </h3>
             <ul className="mt-4 space-y-3">
               {fractional.map((item) => (
-                <li key={item} className="flex gap-3 text-sm text-onyx">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-burgundy" aria-hidden />
+                <li key={item} className="flex gap-3 text-sm text-navy">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
                   {item}
                 </li>
               ))}

@@ -14,7 +14,7 @@ export default function CTASection({
   subtitle = "Book a confidential, no-obligation consultation. We’ll listen first, then show you exactly where fractional finance leadership can move the needle.",
 }: CTASectionProps) {
   return (
-    <section className="bg-burgundy-gradient">
+    <section className="bg-gold-gradient">
       <div className="container-x py-16 md:py-20">
         <Reveal className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
@@ -26,7 +26,7 @@ export default function CTASection({
           <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
             <Link
               href="/contact"
-              className="btn bg-white text-burgundy hover:bg-white/90 hover:-translate-y-0.5"
+              className="btn bg-white text-gold hover:bg-white/90 hover:-translate-y-0.5"
             >
               Schedule a Consultation
               <ArrowRight className="h-4 w-4" aria-hidden />

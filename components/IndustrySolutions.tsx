@@ -15,12 +15,12 @@ export default function IndustrySolutions({
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section id="industries" className="section bg-onyx">
+    <section id="industries" className="section bg-navy">
       <div className="container-x">
         {showHeading && (
           <Reveal className="max-w-2xl">
-            <span className="eyebrow text-burgundy-light">
-              <span className="h-px w-6 bg-burgundy-light" />
+            <span className="eyebrow text-gold-light">
+              <span className="h-px w-6 bg-gold-light" />
               Where we go deep
             </span>
             <h2 className="mt-5 text-3xl font-extrabold text-white sm:text-4xl">
@@ -55,7 +55,7 @@ export default function IndustrySolutions({
                 }}
                 className={`group relative flex-1 overflow-hidden rounded-2xl border p-8 ${
                   hovered === industry.id
-                    ? "border-burgundy bg-burgundy-gradient"
+                    ? "border-gold bg-gold-gradient"
                     : "border-white/10 bg-white/[0.04]"
                 }`}
               >
@@ -85,7 +85,7 @@ export default function IndustrySolutions({
                         className="flex items-center gap-2 text-sm text-white/85"
                       >
                         <Check
-                          className="h-4 w-4 shrink-0 text-burgundy-light group-hover:text-white"
+                          className="h-4 w-4 shrink-0 text-gold-light group-hover:text-white"
                           aria-hidden
                         />
                         {cap}

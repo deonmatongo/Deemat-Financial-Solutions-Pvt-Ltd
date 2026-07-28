@@ -20,16 +20,16 @@ export default function LeadershipSection({
           <div className="relative mx-auto max-w-sm">
             <div
               aria-hidden
-              className="absolute -inset-4 rounded-[2rem] bg-burgundy/10 blur-lg"
+              className="absolute -inset-4 rounded-[2rem] bg-gold/10 blur-lg"
             />
-            <div className="relative overflow-hidden rounded-3xl bg-onyx-gradient p-8 text-center">
-              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-burgundy-gradient font-heading text-3xl font-extrabold text-white ring-4 ring-white/10">
+            <div className="relative overflow-hidden rounded-3xl bg-navy-gradient p-8 text-center">
+              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-gold-gradient font-heading text-3xl font-extrabold text-white ring-4 ring-white/10">
                 {initials}
               </div>
               <h3 className="mt-6 font-heading text-2xl font-bold text-white">
                 {LEADER.name}
               </h3>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-burgundy-light">
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-gold-light">
                 {LEADER.role}
               </p>
               <p className="mt-1 text-xs text-white/50">{LEADER.postnominals}</p>
@@ -54,10 +54,10 @@ export default function LeadershipSection({
           {showHeading && (
             <Reveal>
               <span className="eyebrow">
-                <span className="h-px w-6 bg-burgundy" />
+                <span className="h-px w-6 bg-gold" />
                 Leadership
               </span>
-              <h2 className="mt-5 text-3xl font-extrabold text-onyx sm:text-4xl">
+              <h2 className="mt-5 text-3xl font-extrabold text-navy sm:text-4xl">
                 Two decades of executive judgement, on your side of the table.
               </h2>
             </Reveal>
@@ -74,10 +74,10 @@ export default function LeadershipSection({
               {LEADER.credentials.map((c) => (
                 <li
                   key={c.short}
-                  className="flex items-start gap-3 rounded-xl border border-onyx/10 bg-mist px-4 py-3"
+                  className="flex items-start gap-3 rounded-xl border border-navy/10 bg-mist px-4 py-3"
                 >
-                  <Award className="mt-0.5 h-5 w-5 shrink-0 text-burgundy" aria-hidden />
-                  <span className="text-sm text-onyx">
+                  <Award className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden />
+                  <span className="text-sm text-navy">
                     <span className="font-bold">{c.short}</span>
                     <span className="block text-xs text-slate-brand/70">
                       {c.full}
@@ -89,9 +89,9 @@ export default function LeadershipSection({
           </Reveal>
 
           <Reveal delay={0.28}>
-            <blockquote className="mt-8 flex gap-4 rounded-2xl border-l-4 border-burgundy bg-mist p-6">
-              <Quote className="h-6 w-6 shrink-0 text-burgundy/50" aria-hidden />
-              <p className="text-lg font-medium italic text-onyx">
+            <blockquote className="mt-8 flex gap-4 rounded-2xl border-l-4 border-gold bg-mist p-6">
+              <Quote className="h-6 w-6 shrink-0 text-gold/50" aria-hidden />
+              <p className="text-lg font-medium italic text-navy">
                 “Good finance leadership isn’t about reporting the past — it’s
                 about shaping decisions that build a stronger future.”
               </p>

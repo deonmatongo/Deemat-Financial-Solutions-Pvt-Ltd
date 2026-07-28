@@ -22,7 +22,7 @@ export default function PageHeader({
   crumbs = [],
 }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-onyx-gradient pt-32 pb-16 md:pt-40 md:pb-20">
+    <section className="relative overflow-hidden bg-navy-gradient pt-32 pb-16 md:pt-40 md:pb-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -34,7 +34,7 @@ export default function PageHeader({
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-10 h-[420px] w-[420px] rounded-full bg-burgundy/25 blur-[120px]"
+        className="pointer-events-none absolute -right-24 -top-10 h-[420px] w-[420px] rounded-full bg-gold/25 blur-[120px]"
       />
 
       <div className="container-x relative">
@@ -61,8 +61,8 @@ export default function PageHeader({
           </ol>
         </nav>
 
-        <span className="eyebrow text-burgundy-light">
-          <span className="h-px w-6 bg-burgundy-light" />
+        <span className="eyebrow text-gold-light">
+          <span className="h-px w-6 bg-gold-light" />
           {eyebrow}
         </span>
         <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl">

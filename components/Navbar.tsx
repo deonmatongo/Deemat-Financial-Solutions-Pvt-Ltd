@@ -46,7 +46,7 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled || open
-            ? "border-b border-white/10 bg-onyx/90 backdrop-blur-md"
+            ? "border-b border-white/10 bg-navy/90 backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -74,7 +74,7 @@ export default function Navbar() {
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-0.5 left-0 h-0.5 rounded-full bg-burgundy-light transition-all duration-300 ${
+                    className={`absolute -bottom-0.5 left-0 h-0.5 rounded-full bg-gold-light transition-all duration-300 ${
                       isActive(link.href) ? "w-full" : "w-0"
                     }`}
                   />
@@ -113,7 +113,7 @@ export default function Navbar() {
       {/* Full-screen mobile menu — blurs the page behind it */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-40 flex flex-col bg-onyx/80 backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col bg-navy/80 backdrop-blur-xl transition-all duration-300 lg:hidden ${
           open
             ? "visible opacity-100"
             : "invisible opacity-0"
@@ -137,7 +137,7 @@ export default function Navbar() {
               aria-current={isActive(link.href) ? "page" : undefined}
               className={`group flex items-center justify-between border-b border-white/10 py-4 text-2xl font-semibold transition-all duration-300 ${
                 open ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-              } ${isActive(link.href) ? "text-burgundy-light" : "text-white"}`}
+              } ${isActive(link.href) ? "text-gold-light" : "text-white"}`}
               style={{ transitionDelay: open ? `${80 + i * 45}ms` : "0ms" }}
             >
               {link.label}
@@ -154,15 +154,15 @@ export default function Navbar() {
 
           <ul className="mt-10 space-y-3 text-sm text-white/60">
             <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <Mail className="h-4 w-4 text-gold-light" aria-hidden />
               <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <Phone className="h-4 w-4 text-gold-light" aria-hidden />
               <a href={`tel:${COMPANY.phoneHref}`}>{COMPANY.phone}</a>
             </li>
             <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 text-burgundy-light" aria-hidden />
+              <MapPin className="h-4 w-4 text-gold-light" aria-hidden />
               {COMPANY.location}
             </li>
           </ul>

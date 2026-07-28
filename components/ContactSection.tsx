@@ -81,17 +81,17 @@ export default function ContactSection({
   }
 
   const inputBase =
-    "w-full rounded-xl border bg-white px-4 py-3 text-sm text-onyx placeholder:text-slate-brand/40 transition-colors focus:border-burgundy";
+    "w-full rounded-xl border bg-white px-4 py-3 text-sm text-navy placeholder:text-slate-brand/40 transition-colors focus:border-gold";
 
   return (
-    <section id="contact" className="section bg-onyx">
+    <section id="contact" className="section bg-navy">
       <div className="container-x grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         {/* Left — invitation + coordinates */}
         <Reveal>
           {showHeading ? (
             <>
-              <span className="eyebrow text-burgundy-light">
-                <span className="h-px w-6 bg-burgundy-light" />
+              <span className="eyebrow text-gold-light">
+                <span className="h-px w-6 bg-gold-light" />
                 Let’s talk
               </span>
               <h2 className="mt-5 text-3xl font-extrabold text-white sm:text-4xl">
@@ -112,7 +112,7 @@ export default function ContactSection({
                 href={`mailto:${COMPANY.email}`}
                 className="flex items-center gap-4 text-white/85 transition-colors hover:text-white"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-burgundy-light">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-gold-light">
                   <Mail className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -128,7 +128,7 @@ export default function ContactSection({
                 href={`tel:${COMPANY.phoneHref}`}
                 className="flex items-center gap-4 text-white/85 transition-colors hover:text-white"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-burgundy-light">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-gold-light">
                   <Phone className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -140,7 +140,7 @@ export default function ContactSection({
               </a>
             </li>
             <li className="flex items-center gap-4 text-white/85">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-burgundy-light">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-gold-light">
                 <MapPin className="h-5 w-5" aria-hidden />
               </span>
               <span>
