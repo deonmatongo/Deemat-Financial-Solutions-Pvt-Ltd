@@ -19,7 +19,7 @@ export const COMPANY = {
   valueProp:
     "Flexible executive finance leadership and business advisory — without the cost of maintaining a full-time senior finance executive. Backed by 20+ years of executive experience across listed companies, manufacturing, and security services.",
   location: "Harare, Zimbabwe",
-  email: "naboth.matongo@gmail.com",
+  email: "naboth@deemat.co.zw",
   phone: "+263 773 436 295",
   phoneHref: "+263773436295",
 };

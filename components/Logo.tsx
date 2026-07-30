@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { COMPANY } from "@/lib/content";
-import logoFull from "@/public/deemat-logo-full.png";
+import logoFull from "@/public/deemat-logo-full.jpg";
 
 type LogoProps = {
   variant?: "light" | "dark";
@@ -10,14 +10,14 @@ type LogoProps = {
 export default function Logo({ className = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center ${className}`}>
-      <span className="overflow-hidden rounded-xl">
+      <span className="inline-flex items-center rounded-xl bg-white px-3 py-1.5">
         <Image
           src={logoFull}
           alt={COMPANY.legalName}
           width={192}
-          height={108}
+          height={56}
           priority
-          className="h-16 w-auto object-contain"
+          className="h-11 w-auto object-contain"
         />
       </span>
     </span>

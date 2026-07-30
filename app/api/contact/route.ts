@@ -50,8 +50,8 @@ export async function POST(request: Request) {
   //   import { Resend } from "resend";
   //   const resend = new Resend(process.env.RESEND_API_KEY);
   //   await resend.emails.send({
-  //     from: "Deemat Website <noreply@deematfinancial.com>",
-  //     to: "naboth.matongo@gmail.com",
+  //     from: "Deemat Website <noreply@deemat.co.zw>",
+  //     to: "naboth@deemat.co.zw",
   //     replyTo: submission.email,
   //     subject: `New consultation request — ${submission.name}`,
   //     text: `${submission.message}\n\nFrom: ${submission.name} <${submission.email}>` +
